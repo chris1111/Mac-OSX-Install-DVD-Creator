@@ -1,5 +1,7 @@
 # Mac OS X Install DVD Creator
 
+![Modular Image Creation](http://img15.hostingpics.net/pics/483051appIcon.png)
+
 This a app bundle create with Platypus-5.1
  
 Working inside Mac OS X Lion and Later!  
@@ -22,4 +24,8 @@ You need DVD Double Layer 8.5 gig.
 3.  Move Mac OS X Install DVD on your Desktop`
  
 4.  Run the program and follow every steps.
+
+5.  Burn the DVD: Open terminal and copy paste this command and press ENTER
+
+hdiutil burn -noverifyburn ~/Desktop/"Mac OS X Install DVD.iso"
  
