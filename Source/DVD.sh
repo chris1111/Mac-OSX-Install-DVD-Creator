@@ -88,27 +88,27 @@ echo "**********************************************  "
 echo "Unmount Installer image!  "
 echo "**********************************************  "
 Sleep 2
-hdiutil detach /tmp/Installer-OS
+hdiutil detach -Force /tmp/Installer-OS
 
 echo "  "
+killall Finder
+
+
+# remoove the pkg
+rm ./Installer.pkg
 
 echo "**********************************************  "
 echo "Mount Mac OS X Install DVD!  "   
 echo "**********************************************  "
 
-# Mount the installer iso image
-hdiutil attach /$HOME/Desktop/"Mac OS X Install DVD.iso"
+osascript -e 'tell app "System Events" to display dialog "Click OK to Open Mac OS X Install DVD 
+and Completed process! " with icon file "System:Library:CoreServices:CoreTypes.bundle:Contents:Resources:FinderIcon.icns" buttons {"OK"} default button 1 with title "Mac OS X Install DVD"'
+echo " "
+hdiutil attach ~/Desktop/"Mac OS X Install DVD.iso"
 
-# Open the installer iso image
 open /Volumes/"Mac OS X Install DVD"
- 
-Sleep 2
+
 echo "**********************************************  "
 echo "Mac OS X Install DVD Done !  "
 echo "**********************************************  "
-
-# remoove the pkg
-rm ./Installer.pkg
-
-
 
