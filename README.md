@@ -11,7 +11,7 @@ Working inside Mac OS X Lion and Later!
 
 This will create a Mac OS X Install DVD.iso on your Desktop
 
-The Bootloader Clover EFI v2.3k r3728 is automatically installed.
+The Bootloader Clover EFI v2.3k r3758 is automatically installed.
 
 You need Installer Mac OS X.app from Mac App Store on your Mac.
 
