@@ -25,7 +25,6 @@ You need DVD Double Layer 8.5 gig.
  
 4.  Run the program and follow every steps.
 
-5.  Burn the DVD: Open terminal and copy paste this command and press ENTER
+5.  Burn the DVD: Open the app again and select Burn DVD
 
-hdiutil burn -noverifyburn ~/Desktop/"Mac OS X Install DVD.iso"
  
