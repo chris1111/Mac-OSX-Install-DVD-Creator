@@ -1,6 +1,6 @@
 # Mac OS X Install DVD Creator
 
-![Modular Image Creation](http://img15.hostingpics.net/pics/705204appIcon1.png)
+![Modular Image Creation](http://img4.hostingpics.net/pics/8333911Capture.png)
 
 This a app bundle create with Platypus-5.1
  
