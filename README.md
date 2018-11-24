@@ -18,7 +18,8 @@ You need DVD Double Layer 8.5 gig.
 
 1.  Download Mac-OSX-Install-DVD-Creator.dmg and follow every steps.
 
-## Exemple of completed OS X Mavericks DVD create on macOS Mojave 10.14.1 (18B75)
+## Exemple:
+- completed OS X Mavericks DVD create on macOS Mojave 10.14.1 (18B75)
 
 ![Modular Image Creation](https://i25.servimg.com/u/f25/18/50/18/69/captu353.png)
 
