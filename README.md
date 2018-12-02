@@ -16,7 +16,7 @@ Working to 10.7.5 at 10.12.2
 
 - You need DVD Double Layer 8.5 gig.
 
-### [Download ➤ Mac OS X Install DVD Creato.dmg.rzip](https://github.com/chris1111/Clone-SSD-macOS-High-Sierra/releases/tag/V1)
+### [Download ➤ Mac OS X Install DVD Creato.dmg.rzip](https://github.com/chris1111/Mac-OSX-Install-DVD-Creator/releases/tag/V-1)
 
 
 ## Exemple:
