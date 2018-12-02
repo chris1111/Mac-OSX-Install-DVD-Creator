@@ -8,15 +8,16 @@ Working to 10.7.5 at 10.12.2
 
 # Instructions
 
-This will create a Mac OS X Install DVD.iso on your Desktop
+- This will create a Mac OS X Install DVD.iso on your Desktop
 
-The Bootloader Clover EFI v2.3k r3758 is automatically installed.
+- The Bootloader Clover EFI v2.3k r3758 is automatically installed.
 
-You need Installer Mac OS X.app from Mac App Store on your Mac.
+- You need Installer Mac OS X.app from Mac App Store on your Mac.
 
-You need DVD Double Layer 8.5 gig.
+- You need DVD Double Layer 8.5 gig.
 
-1.  Download Mac-OSX-Install-DVD-Creator.dmg and follow every steps.
+### [Download ➤ Mac OS X Install DVD Creato.dmg.rzip](https://github.com/chris1111/Clone-SSD-macOS-High-Sierra/releases/tag/V1)
+
 
 ## Exemple:
 - completed OS X Mavericks DVD create on macOS Mojave 10.14.1 (18B75)
