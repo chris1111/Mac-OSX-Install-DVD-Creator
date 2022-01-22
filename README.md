@@ -2,12 +2,6 @@
 - This is to test macOS
 - Buy a mac after testing macOS
 
-<p align="center">
- 
-  
-  <a href="https://htmlpreview.github.io/?https://github.com/chris1111/Mac-OSX-Install-DVD-Creator/blob/master/My%20Github%20Page.html" title="My Github Page">Go to ➤ My Github Page</a>
-  
-</p>
 
 ![Capture d’écran, le 2020-05-13 à 08 17 44](https://user-images.githubusercontent.com/6248794/81811476-acc7e780-94f2-11ea-85d8-696a00df1eb6.png)
 
