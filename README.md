@@ -2,7 +2,6 @@
 - This is to test macOS
 - Buy a mac after testing macOS
 
-
 ![Capture d’écran, le 2020-05-13 à 08 17 44](https://user-images.githubusercontent.com/6248794/81811476-acc7e780-94f2-11ea-85d8-696a00df1eb6.png)
 
 This a app bundle create with Platypus-5.1
