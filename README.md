@@ -6,8 +6,8 @@
 
 This a app bundle create with Platypus-5.1
  
-Working to 10.7.5 at 10.12.2  
-
+It work from 10.7 to 10.12
+ 
 # Instructions
 
 - This will create a Mac OS X Install DVD.iso on your Desktop
@@ -19,7 +19,7 @@ Working to 10.7.5 at 10.12.2
 - You need DVD Double Layer 8.5 gig.
 
 ### [Download ➤ Mac OS X Install DVD Creator.dmg.rzip](https://github.com/chris1111/Mac-OSX-Install-DVD-Creator/releases/tag/V-1)
-- Final Release 02 Dec 2018 using platypus 5.2
+- Release 02 Dec 2018 using platypus 5.2
 - Enable Dark Mode
 
 
