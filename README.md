@@ -23,8 +23,7 @@ It work from 10.7 to 10.12
 - Enable Dark Mode
 
 
-## Exemple:
-- completed OS X Mavericks DVD create on macOS Mojave 10.14.1 (18B75)
+### Exemple: Completed OS X Mavericks DVD create on macOS Mojave 10.14.1 (18B75)
 
 <img src="image/Install1.png" alt="Icons Project" style="width:50%;">
 
