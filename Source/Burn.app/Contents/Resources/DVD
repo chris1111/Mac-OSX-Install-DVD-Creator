@@ -1,0 +1,23 @@
+#!/bin/bash
+
+drutil eject
+
+#get CODE Installer path
+if [ "$2" == "" ]; then
+
+echo -n "Please insert your 8.5G DVD now and then close the drawer!
+
+            ⬇︎
+
+After that: Drop your ISO image in the window and press Enter.: "
+
+while [ -z "$CODE" ]; do
+read CODE
+done
+
+else
+CODE="$2"
+fi
+
+
+hdiutil burn -noverifyburn "$CODE"
