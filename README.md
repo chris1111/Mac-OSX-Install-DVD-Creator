@@ -18,7 +18,7 @@ It work from 10.7 to 10.12
 
 - You need DVD Double Layer 8.5 gig.
 
-### [Download ➤ Mac OS X Install DVD Creator.dmg.rzip](https://github.com/chris1111/Mac-OSX-Install-DVD-Creator/releases/tag/V-1)
+### [Download ➤ Mac OS X Install DVD Creator.dmg.zip](https://github.com/chris1111/Mac-OSX-Install-DVD-Creator/releases/tag/V-1)
 - Release 02 Dec 2018 using platypus 5.2
 - Enable Dark Mode
 
