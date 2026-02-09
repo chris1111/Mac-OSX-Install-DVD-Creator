@@ -1,0 +1,9 @@
+Clover EFI installer log 
+Installer version: v2.3k r3757 EFI bootloader
+=====================================================
+=====================================================
+Installing BootSectors BootLoader /cdboot
+
+==================Mac OS X Install DVD===============
+=====================================================
+=========== Clover EFI Installation Finish ==========

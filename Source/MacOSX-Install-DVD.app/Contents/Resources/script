@@ -35,6 +35,8 @@ if [ "/$HOME/Desktop/Mac OS X Install DVD.iso" ]; then
 	rm -rf "/$HOME/Desktop/Mac OS X Install DVD.iso"
 fi
 
+# remoove the pkg
+rm -rf ./Installer.pkg
 echo "**********************************************  "
 echo "Starting Installer Mac OS X Install DVD!  "   
 echo "**********************************************  "
@@ -61,6 +63,13 @@ Sleep 1
 osascript -e 'display notification "Installer Mac OS X Install DVD" with title "Starting"  sound name "default"'
 # Mount the dmg image
 hdiutil attach -nobrowse /Private/tmp/Mac-OSX.sparseimage
+echo "  "
+echo "**********************************************  "
+echo "Create the Installer Package!  "
+echo "**********************************************  "
+Sleep 1
+# Create the Package
+pkgbuild --root ./Installer/Installer_OSX --scripts ./Installer/scripts --identifier com.Hackintosh.cloverbootloader --version 1 --install-location / Installer.pkg
 echo " "
 echo "**********************************************  "
 echo " "
@@ -85,6 +94,8 @@ echo "**********************************************  "
 Sleep 1
 hdiutil detach -Force /Private/tmp/Installer-OS
 Sleep 1
+# remoove the pkg
+rm -rf ./Installer.pkg
 echo "**********************************************  "
 echo "Mount Mac OS X Install DVD!  "   
 echo "**********************************************  "

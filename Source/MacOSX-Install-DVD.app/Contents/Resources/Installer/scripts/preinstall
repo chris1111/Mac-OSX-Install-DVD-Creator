@@ -1,0 +1,37 @@
+#!/bin/bash
+# script Mac OS X Install DVD
+
+echo "==============================================="
+echo "Installer  Pre-Install Script"
+echo "==============================================="
+echo "====================================================="
+
+hdiutil attach /Private/tmp/Installer-OS/BaseSystem.dmg -noverify -nobrowse -mountpoint /Volumes/installer_Base
+
+cp -Rp /Volumes/installer_Base/ "${3}/" 
+
+cp -Rp /Private/tmp/Installer-OS/BaseSystem.chunklist "${3}/"
+
+cp -Rp /Private/tmp/Installer-OS/mach_kernel "${3}/"
+
+rm -rf "${3}/System/Installation/Packages"
+
+cp -Rp  /Private/tmp/Installer-OS/Packages "${3}/System/Installation/Packages"
+
+hdiutil detach -Force /Volumes/installer_Base
+
+cp -Rp /Private/tmp/Installer-OS/BaseSystem.dmg "${3}/"
+
+Sleep 2
+
+# Unmount the dmg image
+hdiutil Detach /Volumes/Mac-OSX-Install-DVD
+
+# Resize the partition in the sparse bundle to remove any free space
+# hdiutil resize -size `hdiutil resize -limits /Private/tmp/Mac-OSX.sparseimage | tail -n 1 | awk '{ print $1 }'`b /Private/tmp/Mac-OSX.sparseimage
+
+# Mount the dmg image
+hdiutil attach -nobrowse /Private/tmp/Mac-OSX.sparseimage
+
+
+exit
