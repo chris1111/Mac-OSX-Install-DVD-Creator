@@ -1,5 +1,6 @@
 #!/bin/bash
-# Mac OS X Install DVD Creator # Copyright (c) 2016, 2026 chris1111
+# Mac OS X Install DVD Creator 
+# Copyright (c) 2016, 2026 chris1111
 # Vars
 apptitle="Mac OS X Install DVD Creator"
 version="1.6" 
@@ -42,9 +43,23 @@ echo "Starting Installer Mac OS X Install DVD!  "
 echo "**********************************************  "
 Sleep 1
 osascript <<EOD
-# If Continue		set theAction to button returned of (display dialog "
-Choose the location of your Install macOS.app" with icon 2 buttons {"Quit", "Install macOS"} default button {"Install macOS"})if theAction = "Quit" then	display dialog "Quitter Installer" with icon note buttons {"EXIT"} default button {"EXIT"}
-        delay 1	do shell script "killall MacOSX-Install-DVD"	returnend ifif theAction = "Install macOS" then	--If Install macOS		set InstallOSX to choose file of type {"XLSX", "APPL"} default location (path to applications folder) with prompt "Choose your Install macOS.app"	set OSXInstaller to POSIX path of InstallOSX	delay 2	do shell script "hdiutil attach -noverify -nobrowse -mountpoint /Private/tmp/Installer-OS \"" & OSXInstaller & "Contents/SharedSupport/InstallESD.dmg\""end if
+# If Continue
+		set theAction to button returned of (display dialog "
+Choose the location of your Install macOS.app" with icon 2 buttons {"Quit", "Install macOS"} default button {"Install macOS"})
+if theAction = "Quit" then
+	display dialog "Quitter Installer" with icon note buttons {"EXIT"} default button {"EXIT"}
+        delay 1
+	do shell script "killall MacOSX-Install-DVD"
+	return
+end if
+if theAction = "Install macOS" then
+	--If Install macOS
+	
+	set InstallOSX to choose file of type {"XLSX", "APPL"} default location (path to applications folder) with prompt "Choose your Install macOS.app"
+	set OSXInstaller to POSIX path of InstallOSX
+	delay 2
+	do shell script "hdiutil attach -noverify -nobrowse -mountpoint /Private/tmp/Installer-OS \"" & OSXInstaller & "Contents/SharedSupport/InstallESD.dmg\""
+end if
 EOD
 
 
