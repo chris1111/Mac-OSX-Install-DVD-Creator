@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>15A284</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>AppleIntel8254XEthernet</string>
+	<key>CFBundleGetInfoString</key>
+	<string>3.1.4b1, Copyright Apple, Inc. 2009-2014</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.driver.AppleIntel8254XEthernet</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Intel 8254X Gigabit Ethernet Driver</string>
+	<key>CFBundlePackageType</key>
+	<string>KEXT</string>
+	<key>CFBundleShortVersionString</key>
+	<string>3.1.4</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>3.1.4b1</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>8V109d</string>
+	<key>DTPlatformVersion</key>
+	<string>GM</string>
+	<key>DTSDKBuild</key>
+	<string>16G18</string>
+	<key>DTSDKName</key>
+	<string>macosx10.12internal</string>
+	<key>DTXcode</key>
+	<string>0830</string>
+	<key>DTXcodeBuild</key>
+	<string>8V109d</string>
+	<key>IOKitPersonalities</key>
+	<dict>
+		<key>PCI Matching</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleIntel8254XEthernet</string>
+			<key>Driver Parameters</key>
+			<dict>
+				<key>Dump EEPROM</key>
+				<false/>
+				<key>EnableLowPwr</key>
+				<integer>1</integer>
+				<key>Flow Control</key>
+				<string>Transmit and Receive</string>
+				<key>IODefaultMedium</key>
+				<string>00000020</string>
+				<key>Maximum Interrupt Rate</key>
+				<integer>4000</integer>
+				<key>Offload TCP/IP Checksum</key>
+				<true/>
+				<key>RxAbsoluteTimer10</key>
+				<integer>300</integer>
+				<key>RxAbsoluteTimer100</key>
+				<integer>300</integer>
+				<key>RxAbsoluteTimer1000</key>
+				<integer>64</integer>
+				<key>RxDelayTimer10</key>
+				<integer>25</integer>
+				<key>RxDelayTimer100</key>
+				<integer>25</integer>
+				<key>RxDelayTimer1000</key>
+				<integer>0</integer>
+				<key>RxDescriptorCount</key>
+				<integer>384</integer>
+				<key>TxDescriptorCount</key>
+				<integer>384</integer>
+				<key>TxQueueSize</key>
+				<integer>4096</integer>
+				<key>WaitForLinkUp</key>
+				<integer>6000</integer>
+			</dict>
+			<key>IOClass</key>
+			<string>AppleIntel8254XEthernet</string>
+			<key>IOPCIClassMatch</key>
+			<string>0x02000000&amp;0xffff0000</string>
+			<key>IOPCIPrimaryMatch</key>
+			<string>0x10968086&amp;0xffffffff 0x100f8086&amp;0xffffffff 0x105e8086&amp;0xffffffff</string>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+		</dict>
+	</dict>
+	<key>OSBundleLibraries</key>
+	<dict>
+		<key>com.apple.iokit.IONetworkingFamily</key>
+		<string>1.4.3</string>
+		<key>com.apple.iokit.IOPCIFamily</key>
+		<string>1.6</string>
+		<key>com.apple.kpi.bsd</key>
+		<string>8.0.0b2</string>
+		<key>com.apple.kpi.iokit</key>
+		<string>8.0.0b2</string>
+		<key>com.apple.kpi.libkern</key>
+		<string>8.0.0b2</string>
+		<key>com.apple.kpi.mach</key>
+		<string>8.0.0b2</string>
+	</dict>
+	<key>OSBundleRequired</key>
+	<string>Network-Root</string>
+</dict>
+</plist>

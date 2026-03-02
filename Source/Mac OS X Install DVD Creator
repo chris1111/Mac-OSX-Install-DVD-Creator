@@ -1,0 +1,154 @@
+#!/bin/sh
+# Create a bootable ISO Hackintosh
+# Mac OS X Install DVD
+# Copyright (c) 2026 chris1111 All rights reserved.
+
+if [[ $(mount | awk '$3 == "/Volumes/Mac-OSX-Install-DVD" {print $3}') != "" ]]; then
+ hdiutil detach -Force "/Volumes/Mac-OSX-Install-DVD"
+fi
+
+if [[ -d "/Volumes/Mac OS X Install DVD" ]]; then
+ hdiutil detach -Force "/Volumes/Mac OS X Install DVD"
+fi
+
+if [ "/Private/tmp/Mac-OSX.sparseimage" ]; then
+	rm -rf "/Private/tmp/MacOS.sparseimage"
+fi
+
+if [ "/$HOME/Desktop/Mac OS X Install DVD.iso" ]; then
+	rm -rf "/$HOME/Desktop/Mac OS X Install DVD.iso"
+fi
+
+echo "**********************************************  "
+echo "Starting Mac OS X Install DVD!  
+
+Please read this NOTE:
+You can create an iso from Mac OS X 10.7 to Mac OS X 10.12
+
+If you have already create Mac OS X Install DVD.iso on the desktop, it will automatically deleted by the script. 
+
+So If you would like to create more disk images; put the images in a folder apart before continue."   
+echo "**********************************************  "
+Sleep 1
+
+# Mount the installer image
+#get InstallMac Installer path
+if [ "$2" == "" ]; then
+
+echo  "`tput setaf 7``tput sgr0``tput bold``tput setaf 10`Move your macOS installation file into the window then press Enter.`tput sgr0` `tput setaf 7``tput sgr0`  "
+while [ -z "$InstallMac" ]; do
+read InstallMac
+done
+if [ ! -d "$InstallMac" ]; then echo "$InstallMac not found"; exit; fi 
+else
+InstallMac="$2"
+fi
+
+# Mount the InstallESD image
+hdiutil attach "$InstallMac"/Contents/SharedSupport/InstallESD.dmg -noverify -nobrowse -mountpoint /Volumes/Installer-OS	
+Sleep 2
+
+# Convert the BaseSystem
+FILE=/Volumes/Installer-OS/BaseSystem.dmg
+if [ -f "$FILE" ]; then
+    echo "$FILE exists."
+    hdiutil convert /Volumes/Installer-OS/BaseSystem.dmg -format UDSP -o /Private/tmp/MacOS
+fi
+
+# Increase the sparse bundle capacity
+hdiutil resize -size 8g /Private/tmp/MacOS.sparseimage
+
+# Mount the sparse bundle for package addition
+hdiutil attach /Private/tmp/MacOS.sparseimage -noverify -nobrowse -mountpoint /Volumes/Mac-OSX-Install-DVD
+
+echo "  "
+echo "**********************************************  "
+echo "Copying Essentiel!  "   
+echo "**********************************************  "
+
+# Copying Essentiel
+FILE=/Volumes/Installer-OS/mach_kernel
+if [ -f "$FILE" ]; then
+    echo "$FILE exists."
+    cp -Rp /Volumes/Installer-OS/mach_kernel /Volumes/Mac-OSX-Install-DVD
+fi
+
+FILE=/Volumes/Installer-OS/BaseSystem.chunklist
+if [ -f "$FILE" ]; then
+    echo "$FILE exists."
+    cp -Rp /Volumes/Installer-OS/BaseSystem.chunklist /Volumes/Mac-OSX-Install-DVD
+fi
+
+FILE=/Volumes/Installer-OS/BaseSystem.dmg
+if [ -f "$FILE" ]; then
+    echo "$FILE exists."
+    cp -Rp /Volumes/Installer-OS/BaseSystem.dmg /Volumes/Mac-OSX-Install-DVD
+fi
+
+echo "Copying Packages! Wait . . ."
+rm -rf "/Volumes/Mac-OSX-Install-DVD/System/Installation/Packages"
+cp -Rp /Volumes/Installer-OS/Packages "/Volumes/Mac-OSX-Install-DVD/System/Installation/Packages"
+
+echo " "
+echo "**********************************************  "
+echo "Download and install Clover! "   
+echo "**********************************************  "
+curl -L https://github.com/chris1111/Mac-OSX-Install-DVD-Creator/releases/download/V-1/Installer.zip -o /Private/tmp/Installer.zip
+Sleep 1
+tar xf /Private/tmp/Installer.zip --directory /Private/tmp
+Sleep 1
+cp -Rp /Private/tmp/Installer/Clover_OSX/* "/Volumes/Mac-OSX-Install-DVD"
+Sleep 2
+install_log="/Volumes/Mac-OSX-Install-DVD/EFI/Clover_Install_Log.txt"
+# ---------------------------------------------
+# Creating log file
+# ---------------------------------------------
+echo "" > "$install_log"
+echo "Clover Iso installer log - $( date )" >> "$install_log"
+echo "Installer version: r5099 (commit: 609ee7e2d) EFI bootloader" >> "$install_log"
+echo "======================================================" >> "$install_log"
+diskutil list >> "$install_log"
+
+echo "======================================================" >> "${install_log}"
+echo "================ No Active Partition =================" >> "${install_log}"
+echo "=========== Clover Iso Installation Finish ===========" >> "${install_log}"
+Sleep 2
+
+# Unmount the dmg image
+hdiutil detach -Force /Volumes/Mac-OSX-Install-DVD
+
+# Resize the partition in the sparse bundle to remove any free space
+hdiutil resize -size `hdiutil resize -limits /Private/tmp/MacOS.sparseimage | tail -n 1 | awk '{ print $1 }'`b /Private/tmp/MacOS.sparseimage
+
+Sleep 2
+# Mount the dmg image
+hdiutil attach /Private/tmp/MacOS.sparseimage -noverify -nobrowse -mountpoint /Volumes/Mac-OSX-Install-DVD
+
+echo " "
+echo "**********************************************  "
+echo "Create iso image! "   
+echo "**********************************************  "
+echo " "
+# Create ISO image
+sudo hdiutil makehybrid -o "$HOME/Desktop/Mac OS X Install DVD.iso" "/Volumes/Mac-OSX-Install-DVD" -iso -hfs -joliet -eltorito-boot "/Volumes/Mac-OSX-Install-DVD/usr/standalone/i386/cdboot" -no-emul-boot -hfs-volume-name "Mac OS X Install DVD" -joliet-volume-name "Mac OS X Install DVD"
+
+echo "**********************************************  "
+echo "Unmount Installer image!  "
+echo "**********************************************  "
+Sleep 1
+hdiutil detach -Force /Volumes/Installer-OS
+hdiutil detach -Force /Volumes/"Mac-OSX-Install-DVD"
+Sleep 1
+# Remove dmg and Clover
+rm -rf /Private/tmp/MacOS.sparseimage
+rm -rf /Private/tmp/Installer.zip
+rm -rf /Private/tmp/Installer
+echo "  "
+echo "**********************************************  "
+echo "Mount Mac OS X Install DVD!  "   
+echo "**********************************************  "
+Open ~/Desktop/"Mac OS X Install DVD.iso"
+
+echo "**********************************************  "
+echo "Mac OS X Install DVD Done !  "
+echo "**********************************************  "
