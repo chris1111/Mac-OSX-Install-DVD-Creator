@@ -16,7 +16,6 @@
 
 #### Clone and Build the repository
 ```bash
-
 git clone https://github.com/chris1111/Mac-OSX-Install-DVD-Creator.git
 ```
 
