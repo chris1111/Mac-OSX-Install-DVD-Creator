@@ -2,8 +2,8 @@
 - This is to test macOS
 - Buy a mac after testing macOS
  
-Working from Mac OS 10.7 TO Mac OS 10.12  
-
+ You can build a bootable DVD for Mac OS 10.7 up to Mac OS 10.12
+ 
 # Instructions
 
 - This will create a Mac OS X Install DVD.iso on your Desktop
@@ -14,8 +14,13 @@ Working from Mac OS 10.7 TO Mac OS 10.12
 
 - You need DVD Double Layer 8.5 gig.
 
+#### Clone and Build the repository
+```bash
 
+git clone https://github.com/chris1111/Mac-OSX-Install-DVD-Creator.git
+```
 
+#### Double click to ➤ `Mac OS X Install DVD Creator`
 
 
  
