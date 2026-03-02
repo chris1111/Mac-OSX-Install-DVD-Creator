@@ -37,6 +37,8 @@ git clone https://github.com/chris1111/Mac-OSX-Install-DVD-Creator.git
 #### Boot Clover from the DVD icon
 <img width="1920" height="1080" alt="screenshot" src="https://github.com/user-attachments/assets/e2c011ab-971f-4a0d-8d6a-3811a5f8c889" />
 
+You can also build a Clover-CD-Iso Boy double click to ➤ `Clover-CD-Iso`
+
 
 
 

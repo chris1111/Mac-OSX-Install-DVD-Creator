@@ -1,0 +1,34 @@
+#!/bin/sh
+# Create a bootable ISO of Clover for Hackintosh
+# CloverIso
+# Copyright (c) 2026 chris1111 All rights reserved.
+PARENTDIR=$(dirname "$0")
+cd "$PARENTDIR"
+install_log="./Source/Installer/Clover_OSX/EFI/Clover_Install_Log.txt"
+rm -rf ./Clover-CD-5099.iso
+Sleep 1
+# ---------------------------------------------
+# Creating log file
+# ---------------------------------------------
+echo "" > "$install_log"
+echo "Clover Iso installer log - $( date )" >> "$install_log"
+echo "Installer version: r5099 (commit: 609ee7e2d) EFI bootloader" >> "$install_log"
+echo "======================================================" >> "$install_log"
+diskutil list >> "$install_log"
+
+echo "======================================================" >> "${install_log}"
+echo "================ No Active Partition =================" >> "${install_log}"
+echo "=========== Clover Iso Installation Finish ===========" >> "${install_log}"
+echo "======================================================" >> "${install_log}"
+
+echo " "
+echo "**********************************************  "
+echo "Create iso image! "   
+echo "**********************************************  "
+echo " "
+# Create ISO image
+hdiutil makehybrid -o "./Clover-CD-5099.iso" "./Source/Installer/Clover_OSX" -iso -hfs -joliet -eltorito-boot "./Source/Installer/Clover_OSX/usr/standalone/i386/cdboot" -no-emul-boot -hfs-volume-name "Clover-CD" -joliet-volume-name "Clover-CD"
+
+rm -rf $install_log
+Open -R ./Clover-CD-5099.iso
+
