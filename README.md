@@ -21,10 +21,10 @@ git clone https://github.com/chris1111/Mac-OSX-Install-DVD-Creator.git
 
 #### Double click to ➤ `Mac OS X Install DVD Creator`
 
-
+#### Move your macOS install App file into the terminal window
 <img width="629" height="497" alt="Screenshot 2026-03-01 at 7 09 59 PM" src="https://github.com/user-attachments/assets/1adff983-c855-4e57-bd7c-052a3d9d9f7c" />
 
-#### Ignore this message
+#### Insert the DVD Double Layer 8.5 gig then Ignore this message
 <img width="475" height="279" alt="Screenshot 1" src="https://github.com/user-attachments/assets/391f63f6-2adb-46bf-9058-b017a7c31150" />
 
 #### Right click burn to disk
