@@ -33,4 +33,10 @@ git clone https://github.com/chris1111/Mac-OSX-Install-DVD-Creator.git
 #### Burn like this
 <img width="612" height="484" alt="Screenshot 3" src="https://github.com/user-attachments/assets/8bbeb91c-2ad7-462f-bb6f-7555f9398483" />
 
+#### Boot Clover from the DVD icon
+<img width="1920" height="1080" alt="screenshot" src="https://github.com/user-attachments/assets/e2c011ab-971f-4a0d-8d6a-3811a5f8c889" />
+
+
+
+
  
